@@ -1,0 +1,155 @@
+import { Link } from 'gatsby';
+import {FiInfo} from 'react-icons/fi';
+import { Counter,  LikeButton, RegVideo, Video } from '../components/Complete';
+
+<section className="mdx-page">
+
+## my first mdx file
+
+**Hashtag swag farm-to-table, drinking vinegar crucifix cardigan viral plaid gochujang affogato.**
+Forage selfies snackwave actually. *Shabby chic tilde organic hexagon fingerstache, butcher typewriter small batch tote
+bag PBR&B.*
+8-bit paleo af jianbing tumeric chicharrones taiyaki poke fingerstache messenger bag retro. Jean shorts portland brooklyn dreamcatcher, readymade slow-carb intelligentsia whatever offal migas iPhone.
+
+A link: 
+[Gatsby Example](https://www.gatsbyjs.org/docs/add-seo-component/)
+
+<div className="code">
+
+```js
+const firstName="John";
+const lastName="Smith";
+```
+
+</div>
+
+<div className="nice-text">
+
+<h3>Nice Text</h3>
+
+<FiInfo className="nice-text-icon" />
+
+Tacos enamel pin vinyl keytar lo-fi, scenester twee distillery freegan meditation woke tattooed readymade. Distillery before they sold out aesthetic, tilde hot chicken viral salvia tattooed subway tile truffaut. Cred vexillologist affogato beard, you probably haven't heard of them health goth prism deep v adaptogen whatever direct trade sustainable ethical kinfolk pork belly. Aesthetic offal af mustache air plant cardigan pour-over activated charcoal post-ironic. Poutine raw denim mumblecore af subway tile distillery, man bun literally bicycle rights.
+
+</div>
+
+<h2>React Component</h2>
+
+<Counter />
+
+```jsx
+import React from "react"
+import styled from "styled-components"
+import { AiOutlineLike } from "react-icons/ai"
+const LikeButton = () => {
+  const [value, setValue] = React.useState(0)
+  return (
+    <Wrapper>
+      <div>
+        <button onClick={() => setValue(value + 1)}>
+          <AiOutlineLike />
+        </button>
+        <p>
+          Liked the post?
+          <br />
+          Click thumbs up few times
+        </p>
+      </div>
+      <span>+{value}</span>
+    </Wrapper>
+  )
+}
+```
+
+<LikeButton />
+
+<h2>Video Components</h2>
+<RegVideo />
+<Video />
+
+<h2>Regular Heading</h2>
+<h2 title="true">Title Heading</h2>
+<h4>inline code</h4>
+
+`console.log('hello there')`
+
+<h4>blockquote element</h4>
+
+<blockquote display="default">
+8-bit paleo af jianbing tumeric chicharrones taiyaki poke fingerstache messenger bag retro. Jean shorts portland brooklyn dreamcatcher, readymade slow-carb intelligentsia whatever offal migas iPhone.
+</blockquote>
+
+<blockquote display="info">
+8-bit paleo af jianbing tumeric chicharrones taiyaki poke fingerstache messenger bag retro. Jean shorts portland brooklyn dreamcatcher, readymade slow-carb intelligentsia whatever offal migas iPhone.
+</blockquote>
+
+<blockquote display="warning">
+8-bit paleo af jianbing tumeric chicharrones taiyaki poke fingerstache messenger bag retro. Jean shorts portland brooklyn dreamcatcher, readymade slow-carb intelligentsia whatever offal migas iPhone.
+</blockquote>
+
+<blockquote>
+8-bit paleo af jianbing tumeric chicharrones taiyaki poke fingerstache messenger bag retro. Jean shorts portland brooklyn dreamcatcher, readymade slow-carb intelligentsia whatever offal migas iPhone.
+</blockquote>
+
+#### Javascript
+
+```js
+// comments
+const name = "john"
+const channel = "coding addict"
+
+function featuredProducts(data) {
+  return data.filter(item => {
+    return item.featured === true
+  })
+}
+featuredProducts()
+```
+
+#### JSX
+
+```jsx
+import React from "react"
+
+const Counter = () => {
+  const [count, setCount] = React.useState(0)
+  return (
+    <section className="counter">
+      <h4>show some love to MDX</h4>
+      <h4>likes {count}</h4>
+      <button className="btn btn-danger" onClick={() => setCount(count + 1)}>
+        i like mdx
+      </button>
+    </section>
+  )
+}
+export default Counter
+```
+
+#### HTML
+
+```html
+<h1>hello world</h1>
+<p class="random">random text</p>
+<section class="contact">
+  <div class="title">
+    <h1>contact us</h1>
+  </div>
+</section>
+```
+
+#### CSS
+
+```css
+max-width: 500px;
+border-radius: var(--radius);
+padding: 1rem 1.5rem;
+background: var(--clr-grey-10);
+text-align: center;
+```
+
+<Link to="/posts" className="btn center-btn">
+  All Posts
+</Link>
+
+</section>

@@ -4,9 +4,41 @@ import Layout from '../components/Layout'
 import Posts from '../components/Posts'
 import { graphql } from 'gatsby'
 import SEO from '../components/SEO'
-// ...GatsbyImageSharpFluid
-const IndexPage = () => {
-  return <h2>home page</h2>
+
+const IndexPage = ({data}) => {
+  const {allMdx:{nodes:posts}} = data;
+
+  return <Layout>
+    <SEO title="Home" />
+    <Hero showPerson />
+    <Posts posts={posts} title="recently published" />
+  </Layout>
 }
+
+export const query = graphql`
+  {
+    allMdx(sort: {fields: frontmatter___date, order: DESC}, limit: 3) {
+      nodes {
+        excerpt
+        frontmatter {
+          author
+          category
+          title
+          date(formatString: "MMMM Do,YYYY")
+          slug
+          readTime
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        id
+      }
+    }
+  }
+`
 
 export default IndexPage

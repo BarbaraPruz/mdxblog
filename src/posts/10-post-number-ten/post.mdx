@@ -1,0 +1,78 @@
+---
+title: Gatsby Tutorial
+slug: gatsby-Tutorial
+image: ./images/gatsby-1.png
+date: 2021-01-01
+author: john smith
+category: gatsby
+readTime: 10
+---
+
+import { Link } from 'gatsby';
+import {FiInfo} from 'react-icons/fi';
+import { Counter,  LikeButton } from '../../components/Complete';
+
+## my first mdx file
+
+**Hashtag swag farm-to-table, drinking vinegar crucifix cardigan viral plaid gochujang affogato.**
+Forage selfies snackwave actually. *Shabby chic tilde organic hexagon fingerstache, butcher typewriter small batch tote
+bag PBR&B.*
+8-bit paleo af jianbing tumeric chicharrones taiyaki poke fingerstache messenger bag retro. Jean shorts portland brooklyn dreamcatcher, readymade slow-carb intelligentsia whatever offal migas iPhone.
+
+A link: 
+[Gatsby Example](https://www.gatsbyjs.org/docs/add-seo-component/)
+
+<div className="code">
+
+```js
+const firstName="John";
+const lastName="Smith";
+```
+
+</div>
+
+<div className="nice-text">
+
+<h3>Nice Text</h3>
+
+<FiInfo className="nice-text-icon" />
+
+Tacos enamel pin vinyl keytar lo-fi, scenester twee distillery freegan meditation woke tattooed readymade. Distillery before they sold out aesthetic, tilde hot chicken viral salvia tattooed subway tile truffaut. Cred vexillologist affogato beard, you probably haven't heard of them health goth prism deep v adaptogen whatever direct trade sustainable ethical kinfolk pork belly. Aesthetic offal af mustache air plant cardigan pour-over activated charcoal post-ironic. Poutine raw denim mumblecore af subway tile distillery, man bun literally bicycle rights.
+
+</div>
+
+<h2>React Component</h2>
+
+<Counter />
+
+```jsx
+import React from "react"
+import styled from "styled-components"
+import { AiOutlineLike } from "react-icons/ai"
+const LikeButton = () => {
+  const [value, setValue] = React.useState(0)
+  return (
+    <Wrapper>
+      <div>
+        <button onClick={() => setValue(value + 1)}>
+          <AiOutlineLike />
+        </button>
+        <p>
+          Liked the post?
+          <br />
+          Click thumbs up few times
+        </p>
+      </div>
+      <span>+{value}</span>
+    </Wrapper>
+  )
+}
+```
+
+<LikeButton />
+
+![nice image](./images/gatsby-1.png)
+
+<Link to="/posts" className="btn center-btn">
+  All Posts
+</Link>
